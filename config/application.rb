@@ -44,5 +44,13 @@ module Invoicer
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    stylesheets_directory = "#{Rails.root}/app/assets/stylesheets"
+    config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
+
+    config.sass.preferred_syntax = :sass
+    config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
+    config.sass.load_paths << Compass::Frameworks['twitter_bootstrap'].stylesheets_directory
+    
   end
 end

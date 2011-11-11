@@ -1,0 +1,7 @@
+<% content_for :login do %>
+  <%= form_tag sessions_path, :class=> "pull-right" do %>
+              <%= text_field_tag :email, params[:email], :class=> "input-medium", :placeholder=>"Email" %>
+              <%= password_field_tag :password, params[:email], :class=> "input-medium", :placeholder => "Password" %>
+              <button class="btn" type="submit">Sign in</button>
+  <% end %>
+<% end %>

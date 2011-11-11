@@ -7,8 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <a class="brand" href="#">Invoicer App</a>
+            <ul class="nav">
+              <li class="active"><a href="/users/new">Sign up</a></li>
+              <li><a href="/sessions/new">Sign in</a></li>
+              <li><a href="#contact">About</a></li>
+            </ul>
+            <%= yield :login %>
+          </div>
+        </div>
+      </div>
 
-<%= yield %>
+      <div class="container">
 
+        <div class="content">
+          <div class="page-header">
+            <%= yield :page_header %>
+          </div>
+          <div class="row">
+              <%= yield %>
+          </div>
+        </div>
+
+        <footer>
+          <p>&copy; Simply Binary Solutions 2011</p>
+        </footer>
+
+      </div> <!-- /container -->
 </body>
 </html>
