@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Invoicer</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -33,9 +32,10 @@
         </div>
 
         <footer>
-          <p>&copy; Simply Binary Solutions 2011</p>
+          <p>&copy; <%= link_to "Simply Binary","http://simplybinary.com" %> <%= Time.now.year %></p>
         </footer>
 
       </div> <!-- /container -->
 </body>
+<%= javascript_include_tag "/steal/steal.js?invoicer/invoicer.js" %>
 </html>

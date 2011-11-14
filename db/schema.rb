@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110044610) do
+ActiveRecord::Schema.define(:version => 20111112000217) do
+
+  create_table "invoice_lines", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "quantity",    :precision => 10, :scale => 3
+    t.string   "description"
+    t.integer  "price"
+    t.boolean  "apply_tax"
+    t.integer  "invoice_id"
+  end
+
+  create_table "invoices", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "date"
+    t.string   "name"
+    t.string   "part_order_num"
+    t.text     "additional_info"
+    t.integer  "tax"
+    t.datetime "due_date"
+    t.datetime "paid_on_date"
+    t.integer  "user_id"
+    t.string   "customer_name"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

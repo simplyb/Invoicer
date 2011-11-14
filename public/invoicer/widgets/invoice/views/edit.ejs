@@ -1,0 +1,63 @@
+<br/><br/><br/>
+<div class="clearfix">
+<h2>
+	<span style="float:left;">Edit <%= invoice.name %></span>
+	<span style="margin-left:5px; float:left;">
+		<button class="btn danger delete_invoice">X</button>
+	</span>	
+</h2>
+</div>
+<br/><br/><br/><br/>
+<div class="clearfix">
+<form class="invoice_form" action="#">
+<div class="clearfix">
+  <div class="input-prepend">
+    <span class="add-on">Customer</span>
+    <%== text_field_tag( "invoice[customer_name]", invoice.customer_name )%>
+  </div>
+  <span class="help-block">The name of your customer.</span>
+</div>
+<div class="clearfix">
+  <div class="input-prepend">
+    <span class="add-on">Invoice Date</span>
+    <%== text_field_tag( "invoice[created_at]", invoice.created_at )%>
+  </div>
+  <span class="help-block">The date you invoiced the customer.</span>
+</div>
+<div class="clearfix">
+  <div class="input-prepend">
+    <span class="add-on">Invoice ID</span>
+    <%== text_field_tag( "invoice[name]", invoice.name )%>
+  </div>
+  <span class="help-block">Unique ID for your invoice.</span>
+</div>
+
+
+	 <div>
+		<table class="time_form tablesorter">
+			<thead>
+				<tr class="">			
+					<th>Description</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Tax</th>	
+					<th>Total</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody class="lines">			
+			 	
+			</tbody>
+		</table>	
+	 </div>
+	<div id="total">Total is: <span id="invoice_total"></span></div><br/>
+	
+	 <button class="btn add_invoice_line">Add invoice line</button>
+	
+
+	 
+	 <p><label>Due Date</label><%== text_field_tag( "invoice[due_date]", invoice.due_date )%></p>
+	 <p><button class="btn success">Create</button></p>
+
+</form>
+</div>

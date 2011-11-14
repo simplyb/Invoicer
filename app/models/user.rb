@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, :on => :create
   
   attr_accessible :email, :password, :password_confirmation
+  
+  has_many :invoices
 end

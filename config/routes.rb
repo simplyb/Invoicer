@@ -52,6 +52,7 @@ Invoicer::Application.routes.draw do
   # just remember to delete public/index.html.
   
   resource :dashboard, :controller => "dashboard"
+  resources :invoices
   resources :users
   resources :sessions
   

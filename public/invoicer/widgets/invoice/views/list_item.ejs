@@ -1,0 +1,9 @@
+<%
+var due_date = invoice.due_date.substr(0,10)
+%>
+<div class="list_item">
+  <a href="#" class="invoice_name"><%= invoice.name %></a><span class="label"><%= due_date %></span>
+</div>
+<div class="show_invoice" style="display:none">
+  <%== $.View("//invoicer/widgets/invoice/views/edit.ejs", { invoice: invoice }) %>
+</div>
