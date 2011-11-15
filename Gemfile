@@ -26,10 +26,9 @@ gem 'ruby-debug19'
 
 group :test, :development do
   gem 'rspec-rails'
-end
-
-group :test do
+  gem 'jasmine'
   gem 'rspec'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end

@@ -20,18 +20,18 @@ function(){
    test("invoice form adds to dom", function(){
      
      //fill out the invoice form
-     S("input[name='invoice[name]']").exists().click().type("Invoice 0006");
-     S("input[name='invoice[customer_name]']").exists().click().type("My Customer");
-     S("input[name='invoice[due_date]']").exists().click().type("2011-11-15");
+     S("input[name='invoice[name]']").click().type("Invoice 0006");
+     S("input[name='invoice[customer_name]']").click().type("My Customer");
+     S("input[name='invoice[due_date]']").click().type("2011-11-15");
      
      //click the create button
-     S("button.success").exists().click(function(){
+     S("button.success").click(function(){
        // wait for AJAX response
         S('#list > li').visible(function(){
           equal( S('#list > li').size(), 5, "there are 5 invoices")
         })
 
-        S('#list > li:last a').exists().click();
+        S('#list > li:last a').click();
      });
     
      
